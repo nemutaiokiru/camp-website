@@ -1,0 +1,225 @@
+    /* ベーススタイル */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+      }
+      
+      header {
+        background-color: #fff;
+        padding: 60px 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      header h1 {
+        font-size: 2.5em;
+        color: #333;
+        margin: 0;
+      }
+      
+      header p {
+        font-size: 1.1em;
+        color: #777;
+        margin-top: 10px;
+      }
+      
+      /* プロフィール画像を丸くして枠をつけるスタイル */
+      #profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%; /* 丸くする */
+        border: 5px solid #656765; /* 枠の色と太さ */
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .profile-img {
+        width: 80%; /* 画像のサイズ調整 */
+        height: 80%; /* 画像のサイズ調整 */
+        border-radius: 50%; /* 丸い形にする */
+        object-fit: cover; /* 画像が丸枠に収まるように調整 */
+      }
+      
+      /* セクションのスタイル */
+      .section {
+        padding: 50px 20px;
+        margin: 40px 0;
+        text-align: center;
+      }
+      
+      .section h2 {
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      .section p {
+        font-size: 1.2em;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+      
+      .section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      
+      /* 詳細セクション */
+      .details {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      
+      .details div {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        text-align: center;
+      }
+      
+      .details div h3 {
+        font-size: 1.5em;
+        color: #333;
+      }
+      
+      .details div p {
+        font-size: 1.1em;
+        color: #777;
+      }
+      
+      /* フッター */
+      footer {
+        background-color: #fff;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      footer p {
+        color: #777;
+        font-size: 1.1em;
+      }
+      
+      footer .contact-link {
+        color: #3498db;
+        text-decoration: none;
+      }
+      
+      footer .contact-link:hover {
+        text-decoration: underline;
+      }
+      
+      /* ボタン */
+      .btn {
+        background-color: #3498db;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .btn:hover {
+        background-color: #2980b9;
+      }
+      
+      /* レスポンシブデザイン */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2em; /* ヘッダーのタイトルのサイズを小さく */
+        }
+      
+        header p {
+          font-size: 1em;
+        }
+      
+        .section h2 {
+          font-size: 1.8em;
+        }
+      
+        .section p {
+          font-size: 1.1em;
+        }
+      
+        .details {
+          flex-direction: column; /* 縦並びに変更 */
+          gap: 20px;
+        }
+      
+        .details div {
+          width: 90%; /* 画面幅に合わせて、詳細の項目を広く */
+          margin: 0 auto; /* セクション内で中央寄せ */
+        }
+      
+        .profile-img {
+          width: 60%; /* プロフィール画像を小さく */
+          height: 60%;
+        }
+      
+        footer p {
+          font-size: 1em; /* フッター内の文字サイズを調整 */
+        }
+      
+        footer .contact-link {
+          font-size: 1em; /* メールアドレスのリンクサイズを調整 */
+        }
+      
+        footer .contact-link:hover {
+          text-decoration: underline;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 1.5em; /* タイトルをさらに小さく */
+        }
+      
+        header p {
+          font-size: 0.9em;
+        }
+      
+        .section h2 {
+          font-size: 1.5em;
+        }
+      
+        .section p {
+          font-size: 1em;
+        }
+      
+        .details div {
+          width: 100%; /* 詳細セクションがフル幅に */
+          padding: 15px;
+        }
+      
+        .profile-img {
+          width: 50%; /* プロフィール画像をさらに小さく */
+          height: 50%;
+        }
+      
+        footer p {
+          font-size: 0.9em; /* フッターの文字サイズを少し小さく */
+        }
+      
+        footer .contact-link {
+          font-size: 0.9em;
+        }
+      
+        .btn {
+          font-size: 1em;
+          padding: 10px 20px;
+        }
+      }
