@@ -6,9 +6,9 @@
         padding: 0;
         color: #333;
         line-height: 1.6;
-      }
+    }
       
-      header {
+    header {
         background-color: #fff;
         padding: 60px 20px;
         text-align: center;
@@ -27,23 +27,23 @@
         margin-top: 10px;
       }
       
-      /* プロフィール画像を丸くして枠をつけるスタイル */
-      #profile-img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%; /* 丸くする */
-        border: 5px solid #656765; /* 枠の色と太さ */
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-      
-      .profile-img {
-        width: 80%; /* 画像のサイズ調整 */
-        height: 80%; /* 画像のサイズ調整 */
-        border-radius: 50%; /* 丸い形にする */
-        object-fit: cover; /* 画像が丸枠に収まるように調整 */
-      }
-      
+    /* プロフィール画像を丸くして枠をつけるスタイル */
+    /* プロフィール画像の基本スタイル */
+    #profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #656765;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease; /* スムーズに変化するためのトランジション */
+        }
+        
+    /* ホバー時のエフェクト */
+        #profile-img:hover {
+            transform: scale(1.1); /* ズームイン効果 */
+        }
+
       /* セクションのスタイル */
       .section {
         padding: 50px 20px;
@@ -136,6 +136,67 @@
       .btn:hover {
         background-color: #2980b9;
       }
+
+      /* 「続きを読む」ボタン */
+#read-more-btn {
+    background-color: transparent; /* 背景を透明に */
+    border: none; /* 枠線をなくす */
+    color: #3498db; /* テキスト色を青 */
+    font-size: 0.9em;
+    cursor: pointer;
+    text-decoration: underline; /* 下線を引いて強調 */
+    padding: 5px;
+    transition: color 0.3s, text-decoration 0.3s;
+  }
+  
+  #read-more-btn:hover {
+    color: #2980b9; /* ホバー時の色 */
+    text-decoration: none; /* 下線を外す */
+  }
+
+      /* モーダルの背景 */
+.modal {
+    display: none; /* 最初は非表示 */
+    position: fixed; /* 画面全体に表示 */
+    z-index: 1; /* 最前面に表示 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+    overflow: auto; /* スクロール可能 */
+  }
+  
+  /* モーダルのコンテンツ */
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative; /* 閉じるボタンの位置を相対的に配置 */
+  }
+  
+  /* 閉じるボタン */
+/* 閉じるボタン */
+.close-btn {
+    background-color: transparent; /* 背景を透明に */
+    border: none; /* 枠線をなくす */
+    color: #8d8b8b; /* 黒に近い色 */
+    font-size: 1.5em; /* ボタンのサイズ */
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute; /* 絶対配置 */
+    top: 10px; /* 上からの距離 */
+    right: 15px; /* 右からの距離 */
+    transition: color 0.3s;
+  }
+  
+  .close-btn:hover {
+    color: #333; /* ホバー時の色 */
+  }
+  
       
       /* レスポンシブデザイン */
       @media (max-width: 768px) {

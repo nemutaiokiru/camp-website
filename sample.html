@@ -6,34 +6,34 @@
   <title>ポートフォリオ | Megumi</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sample.css">
-  <style>
-  </style>
+  <script src="sample.js"></script>
 </head>
 <body>
 
 <!-- ヘッダー -->
 <header>
   <h1>Megumi</h1>
-  <p>カスタマーサクセス</p>
 </header>
 
 <!-- 基本情報セクション -->
 <section class="section">
   <h2>基本情報</h2>
-  <p>こんにちは！私はMegumiです。</p>
     <img src="939.png" alt="プロフィール画像" id="profile-img">
   <div class="details">
     <div>
       <h3>出身・在住</h3>
-      <p>宮崎県宮崎市出身・2023年10月から湘南に移り住み、江ノ島の近くで生活してます。</p>
+      <p id="description">宮崎県宮崎市出身・2023年10月から湘南に移り住み、江ノ島の近くで生活してます。</p>
+      <button id="read-more-btn" class="btn">続きを読む</button>
     </div>
     <div>
       <h3>大学時代</h3>
       <p>京都で過ごしました。５年在籍して2020年3月卒業。</p>
+      <button id="read-more-btn" class="btn">続きを読む</button>
     </div>
     <div>
       <h3>家族</h3>
       <p>4人兄弟の3番目です。</p>
+      <button id="read-more-btn" class="btn">続きを読む</button>
     </div>
   </div>
 </section>
@@ -48,12 +48,12 @@
       <p>2021年9月〜</p>
     </div>
     <div>
-      <h3>カスタマーサクセスマネージャー</h3>
-      <p>昨年の約８人ほどのチームをまとめています。</p>
+      <h3>CS Manager</h3>
+      <p>昨年からカスタマーサクセスマネージャーとして約８人ほどのチームをまとめています。</p>
     </div>
     <div>
       <h3>主な顧客の業態</h3>
-      <p>リゾートホテル</p>
+      <p>リゾートホテル（沖縄や北海道、山の中や海の近くの施設が多め）</p>
     </div>
   </div>
 </section>
@@ -65,18 +65,26 @@
   <div class="details">
     <div>
       <h3>サーフィン</h3>
-      <p>約１年くらい前に初めて、細々やってます。</p>
+      <p>約１年くらい前に初めて、細々やってます。初めて半年くらいでバリで波乗りしました。</p>
     </div>
     <div>
       <h3>水タバコ</h3>
       <p>大学時代アルバイトしていたので、作ることもできます。</p>
     </div>
     <div>
-      <h3>美味しそうなご飯屋さんのマッピング</h3>
+      <h3>Mapへのピンたて</h3>
       <p>Google MAPでピンをたくさん立てていますが、全然行けません。</p>
     </div>
   </div>
 </section>
+
+<!-- モーダル -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="close-btn" class="close-btn">&times;</span>
+    <p id="full-text"></p>
+  </div>
+</div>
 
 <!-- フッター -->
 <footer>
@@ -84,6 +92,5 @@
   <p>Email: <a href="mailto:example@example.com" class="contact-link">example@example.com</a></p>
   <p>TEL: <a href="tel:09000000000" class="contact-link">090-0000-0000</a></p>
 </footer>
-
 </body>
 </html>
