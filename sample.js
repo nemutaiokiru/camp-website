@@ -1,4 +1,4 @@
-  window.onload = function() {
+window.onload = function() {
     const description = document.getElementById("description");
     const readMoreBtn = document.getElementById("read-more-btn");
   
@@ -48,4 +48,3 @@
       }
     });
   };
-  
