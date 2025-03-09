@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>数当てゲーム</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" >
+    <style>
+        #guessGame{
+            margin: 20px;
+        }
+
+        #guessGameinput{
+            width: 200px;;
+        }
+    </style>
+</head>
+<body>
+    <main class="countainer">
+        <h1>数当てゲーム（1~20）</h1>
+
+        <div id="guessGame">
+            <label for="guessField">予想：</label>
+            <input type="number" min="1" max="20" id="guessField">
+            <input type="submit" value="予想を入力" id="guessSubmit">
+        </div>
+    </main>
+</body>
+</hrml>
