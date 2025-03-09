@@ -15,19 +15,34 @@
 </head>
 <body>
     <main class="countainer">
-        <h1>数当てゲーム（1~20）</h1>
+        <h1>数当てゲーム（1~100）</h1>
 
         <div id="guessGame">
             <label for="guessField">予想：</label>
-            <input type="number" min="1" max="20" id="guessField">
+            <input type="number" min="1" max="100" id="guessField">
             <input type="submit" value="予想を入力" id="guessSubmit">
             <p id="guessResult"></p>
+            <button id="resetButton">リセット</button>
         </div>
     </main>
 
     <script>
+
+        //ゲームリセット処理
+        function resetGame(){
+            answerNumber = Math.floor(Math.random() * 100) + 1;
+            console.log('正解は' + answerNumber);
+            remainingAttempts = 5;
+            //結果をリセット
+            guessResult.textContent = '';
+            // 入力フィールドをリセット
+            guessField.value = '';
+            //予想を入力ボタンを表示
+            guessSubmit.disabled = false;
+        }
+
         // 1から20までのランダムな整数を生成し、コンソールにログを出力
-        let answerNumber = Math.floor(Math.random() * 20) + 1;
+        let answerNumber = Math.floor(Math.random() * 100) + 1;
         console.log('正解は' + answerNumber);
 
         // 数値入力フィールドを取得
@@ -39,22 +54,39 @@
         // 結果を表示する要素を取得
         let guessResult = document.querySelector('#guessResult');
 
+        //リセットボタンを取得
+        let gameReset = document.querySelector('#gameReset');
+
+        // 予想回数の制限
+        let remainingAttempts = 5;
+
+
         // ユーザーの入力をチェックし、結果を表示
         function checkGuess() {
             // ユーザの入力した値を取得
             let userGuess = Number(guessField.value);
 
-            if (userGuess === answerNumber) { // ユーザの入力が正解
-            guessResult.textContent = '正解です！';
-            } else if (userGuess < answerNumber) { // ユーザの入力が正解より小さい
-            guessResult.textContent = 'もっと大きいです';
-            } else if (userGuess > answerNumber) { // ユーザの入力が正解より大きい
-            guessResult.textContent = 'もっと小さいです';
+            if(remainingAttempts > 0){
+                if (userGuess === answerNumber) { // ユーザの入力が正解
+                guessResult.textContent = '正解です！';
+                } else if (userGuess < answerNumber) { // ユーザの入力が正解より小さい
+                guessResult.textContent = 'もっと大きいです';
+                } else if (userGuess > answerNumber) { // ユーザの入力が正解より大きい
+                guessResult.textContent = 'もっと小さいです';
+                }
+                remainingAttempts--;
             }
+
+        if(remainingAttempts === 0 && userGuess !== answerNumber){
+            guessResult.textContent = 'ゲームオーバー';
+            guessSubmit.disabled = true;
+        }
         }
 
         // submitがクリックされたときに、checkGuess関数を呼び出す
         guessSubmit.addEventListener('click', checkGuess);
+        // resetがクリックされたときに、esetGame関数を呼び出す
+        gameReset.addEventListener('click', resetGame);
     </script>
 </body>
 </hrml>
